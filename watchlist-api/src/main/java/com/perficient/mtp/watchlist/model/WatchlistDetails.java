@@ -17,7 +17,9 @@ public class WatchlistDetails {
 	private final List<String> symbolList;
 	
 	@JsonCreator(mode = JsonCreator.Mode.PROPERTIES)
-	public WatchlistDetails(@JsonProperty("id") Long id, @JsonProperty("symbol") String name, @JsonProperty("symbolList") List<String> symbolList) {
+	public WatchlistDetails(@JsonProperty("id") Long id,
+							@JsonProperty("name") String name,
+							@JsonProperty("symbolList") List<String> symbolList) {
 	    this.id = id;
 	    this.name = name;
 	    this.symbolList = symbolList;
