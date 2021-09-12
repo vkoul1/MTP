@@ -11,13 +11,6 @@ import org.springframework.web.reactive.function.server.ServerResponse;
 @Configuration(proxyBeanMethods = false)
 public class WatchlistRouter {
 
-//	@Bean
-//	public RouterFunction<ServerResponse> route(WatchlistHandler watchlistHandler) {
-//
-//		return RouterFunctions
-//			.route(GET("/watchlists"), watchlistHandler::watchlists)
-//			.andRoute(GET("/watchlist-details/{id}"), watchlistHandler::watchlistDetails);
-//	}
 
 	@Bean
 	RouterFunction<ServerResponse> getWatchlistsRoute(WatchlistHandler watchlistHandler) {
@@ -25,7 +18,7 @@ public class WatchlistRouter {
 	}
 
 	@Bean
-	RouterFunction<ServerResponse> watWatchlistDetailsRoute(WatchlistHandler watchlistHandler) {
+	RouterFunction<ServerResponse> getWatchlistDetailsRoute(WatchlistHandler watchlistHandler) {
 		return route(GET("/watchlist/{id}"), watchlistHandler::watchlistDetails);
 	}
 }
