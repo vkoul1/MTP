@@ -1,0 +1,21 @@
+plugins {
+	id 'mtp.java-conventions'
+  	id "io.freefair.lombok" version "$lombokVersion"
+}
+
+group = 'com.perficient.mtp'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = "$javaSourceCompatibility"
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: "$jacksonVersion"
+}
+
+
+test {
+	useJUnitPlatform()
+}

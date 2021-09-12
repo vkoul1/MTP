@@ -1,0 +1,34 @@
+plugins {
+	id 'mtp.java-conventions'
+	id 'org.springframework.boot' version "$springBootVersion" apply false		// no executable jar etc.
+	id 'io.spring.dependency-management' version "$springDependencyVersion"
+  	id "io.freefair.lombok" version "$lombokVersion"
+}
+
+group = 'com.perficient.mtp'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = "$javaSourceCompatibility"
+
+apply plugin: 'io.spring.dependency-management'
+
+repositories {
+	mavenCentral()
+}
+
+dependencyManagement {
+	imports {
+		mavenBom org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES
+	}
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-aop'
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	
+	//testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+
+test {
+	useJUnitPlatform()
+}

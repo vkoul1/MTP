@@ -1,0 +1,40 @@
+plugins {
+	id 'mtp.java-conventions'
+	id 'org.springframework.boot' version "$springBootVersion"
+	id 'io.spring.dependency-management' version "$springDependencyVersion"
+  	id "io.freefair.lombok" version "$lombokVersion"
+}
+
+group = 'com.perficient.mtp'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = "$javaSourceCompatibility"
+
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+    implementation project(':commons-svc')
+    implementation project(':profile-api')
+    
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-aop'
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	implementation 'io.micrometer:micrometer-registry-prometheus'
+
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	
+	//Test Dependencies	
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	
+	// LocalDate etc.
+	// https://mvnrepository.com/artifact/com.fasterxml.jackson.module/jackson-modules-java8
+	runtimeOnly group: 'com.fasterxml.jackson.module', name: 'jackson-modules-java8', version: "$jacksonVersion", ext: 'pom'
+
+}
+
+
+test {
+	useJUnitPlatform()
+}

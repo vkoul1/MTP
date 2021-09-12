@@ -1,0 +1,12 @@
+rootProject.name = 'mtp'
+
+include 'commons-svc'
+include 'watchlist-api'
+include 'watchlist-svc'
+include 'profile-api'
+include 'profile-svc'
+include 'quote-api'
+include 'quote-svc'
+include 'mtp-app'
+
+gradle.ext.springBootVersion='2.5.3'

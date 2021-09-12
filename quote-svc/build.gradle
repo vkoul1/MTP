@@ -1,0 +1,27 @@
+plugins {
+	id 'mtp.java-conventions'
+	id 'org.springframework.boot' version "$springBootVersion"
+	id 'io.spring.dependency-management' version "$springDependencyVersion"
+  	id "io.freefair.lombok" version "$lombokVersion"
+}
+
+group = 'com.perficient.mtp'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = "$javaSourceCompatibility"
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-webflux'
+	
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'io.projectreactor:reactor-test'
+}
+
+test {
+	useJUnitPlatform()
+}
