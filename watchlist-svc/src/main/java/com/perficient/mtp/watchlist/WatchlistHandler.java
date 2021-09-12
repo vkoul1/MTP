@@ -38,6 +38,7 @@ public class WatchlistHandler {
         return service.getWatchListDetails(Long.parseLong(id))
 	        .flatMap(x -> ServerResponse
 	        		.ok()
+					.contentType(MediaType.APPLICATION_JSON)
 	        		.body(Mono.just(x), WatchlistDetails.class))
 	        .switchIfEmpty(ServerResponse
 	        		.notFound()
