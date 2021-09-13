@@ -15,14 +15,14 @@ import reactor.core.publisher.Mono;
 @RequiredArgsConstructor
 public class ProfileController {
 
-	private final ProfileService priceHistoryService;
+	private final ProfileService profileService;
 
 	@Timed
 	@ResponseBody
 	@GetMapping("/symbol-profile/{ticker}")
 	public ResponseEntity<SymbolProfile> getSymbolProfile(@PathVariable String ticker) {
 
-		Mono<SymbolProfile> mono = priceHistoryService.getSymbolProfile(ticker);
+		Mono<SymbolProfile> mono = profileService.getSymbolProfile(ticker);
 
 		SymbolProfile sp = mono.block();
 		
@@ -38,7 +38,7 @@ public class ProfileController {
 			@PathVariable String ticker,
 			@RequestParam(defaultValue = "30") int days) {
 
-		Mono<PriceHistory> mono = priceHistoryService.getPriceHistory(ticker, days);
+		Mono<PriceHistory> mono = profileService.getPriceHistory(ticker, days);
 
 		PriceHistory ph = mono.block();
 		

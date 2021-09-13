@@ -5,8 +5,6 @@ import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
 
-import com.perficient.mtp.profile.PriceHistory;
-
 import reactor.core.publisher.Mono;
 
 @Component

@@ -1,20 +1,19 @@
 package com.perficient.mtp.quote;
 
+import java.util.Collection;
+
 import org.springframework.stereotype.Service;
 
-import com.perficient.mtp.profile.SymbolProfile;
-
 import lombok.RequiredArgsConstructor;
+import reactor.core.publisher.Flux;
 
 @Service
 @RequiredArgsConstructor
 public class QuoteService {
 
-	public SymbolProfile getSymbolProfile(String symbol) {
+	public Flux<Quote> getQuotes(Collection<String> symbols) {
 		
-		return SymbolProfile.builder()
-				.symbol(symbol)
-				.build();
+		return Flux.empty();
 	}
 
 }

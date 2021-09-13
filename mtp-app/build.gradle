@@ -17,6 +17,7 @@ repositories {
 dependencies {
     implementation project(':commons-svc')
     implementation project(':profile-api')
+    implementation project(':quote-api')
     implementation project(':watchlist-api')
     
 	implementation 'org.springframework.boot:spring-boot-starter-web'
