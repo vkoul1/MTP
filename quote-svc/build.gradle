@@ -14,6 +14,9 @@ repositories {
 }
 
 dependencies {
+	implementation project(':commons-svc')
+	implementation project(':quote-api')
+	
 	implementation 'org.springframework.boot:spring-boot-starter-webflux'
 	
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'

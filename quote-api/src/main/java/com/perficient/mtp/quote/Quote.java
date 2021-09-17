@@ -3,6 +3,7 @@ package com.perficient.mtp.quote;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import lombok.Builder;
 import lombok.Data;
 /*
  * From https://polygon.io/docs/websockets/ws_stocks_Q_anchor
@@ -22,6 +23,7 @@ import lombok.Data;
  */
 
 @Data
+@Builder
 public class Quote {
 
 	private final char	ev;		// event type

@@ -1,13 +1,13 @@
-package com.perficient.mtp.quotes;
+package com.perficient.mtp.quote;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class QuotesApplication {
+public class QuoteApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(QuotesApplication.class, args);
+		SpringApplication.run(QuoteApplication.class, args);
 	}
 
 }

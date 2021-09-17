@@ -36,7 +36,7 @@ public class WatchlistClient {
 		
 		return this.client
 				.get()
-				.uri("/watchlist-details/" + id)
+				.uri("/watchlist/" + id)
 				.accept(MediaType.APPLICATION_JSON)
 				.retrieve()
 				.bodyToMono(WatchlistDetails.class);

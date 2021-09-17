@@ -35,7 +35,7 @@ public class WatchlistController {
 
 	@Timed
 	@ResponseBody
-	@GetMapping("/watchlist-details/{id}")
+	@GetMapping("/watchlist/{id}")
 	public ResponseEntity<WatchlistDetails> getWatchlistDetails(@PathVariable Long id) {
 
 		Mono<WatchlistDetails> mono = watchlistClient.getWatchlistDetails(id);
