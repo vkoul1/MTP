@@ -1,0 +1,36 @@
+
+spring:
+  application:
+    name: mtp-app
+
+  profiles:
+    active: dev             # until another profile is necessary
+
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            clientId: <REMOVED>
+            clientSecret: <REMOVED>
+          google:
+            clientId: <REMOVED>
+            clientSecret: <REMOVED>
+
+
+# actuator config
+  # for now, should restrict later
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+# URLs
+mtp:
+  watchlist-svc:
+    base-url: http://localhost:8081
+  profile-svc:
+    base-url: http://localhost:8082
+  quote-svc:
+    base-url: http://localhost:8083
