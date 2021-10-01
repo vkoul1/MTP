@@ -42,13 +42,14 @@ public class PriceHistoryControllerIntegrationTest {
     @Autowired
 	private MockMvc mockMvc;
 
-    @MockBean
-	private ProfileService priceHistoryService;
+//    @MockBean
+//	private ProfileService priceHistoryService;
 	
 	@Value("${mtp.profile-svc.base-url}") String baseURL;
 	
 	
 //    @BeforeEach
+	/*
     public void setup() {
     	
 		LocalDate start = LocalDate.now().minusDays(DAYS);
@@ -65,7 +66,8 @@ public class PriceHistoryControllerIntegrationTest {
 		
     	when(priceHistoryService.getPriceHistory(SYMBOL, DAYS)).thenReturn(Mono.just(ph));
     }
-	    
+	  */
+	
 	    
 	    
 //	@Test
