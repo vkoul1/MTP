@@ -11,11 +11,11 @@ spring:
       client:
         registration:
           github:
-            clientId: <REMOVED>
-            clientSecret: <REMOVED>
+            clientId: ${GITHUB_CLIENT_ID}
+            clientSecret: ${GITHUB_CLIENT_SECRET}
           google:
-            clientId: <REMOVED>
-            clientSecret: <REMOVED>
+            clientId: ${GOOGLE_CLIENT_ID}
+            clientSecret: ${GOOGLE_CLIENT_SECRET}
 
 
 # actuator config

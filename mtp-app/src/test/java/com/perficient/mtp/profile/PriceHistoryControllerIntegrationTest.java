@@ -1,32 +1,8 @@
 package com.perficient.mtp.profile;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.mockito.Mockito.when;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-
-import java.time.LocalDate;
-import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
-
 import org.junit.jupiter.api.Disabled;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.http.MediaType;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.MvcResult;
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.json.JsonMapper;
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-
-import reactor.core.publisher.Mono;
 
 @Disabled
 @AutoConfigureMockMvc
@@ -34,7 +10,7 @@ import reactor.core.publisher.Mono;
 //@WebMvcTest(PriceHistoryController.class)
 @WebMvcTest
 public class PriceHistoryControllerIntegrationTest {
-
+/*
 	private static final String SYMBOL = "TSLA";
 	private static final int DAYS = 5;
 	
@@ -46,10 +22,8 @@ public class PriceHistoryControllerIntegrationTest {
 //	private ProfileService priceHistoryService;
 	
 	@Value("${mtp.profile-svc.base-url}") String baseURL;
-	
-	
-//    @BeforeEach
-	/*
+
+    @BeforeEach
     public void setup() {
     	
 		LocalDate start = LocalDate.now().minusDays(DAYS);
@@ -66,14 +40,13 @@ public class PriceHistoryControllerIntegrationTest {
 		
     	when(priceHistoryService.getPriceHistory(SYMBOL, DAYS)).thenReturn(Mono.just(ph));
     }
-	  */
 	
 	    
 	    
-//	@Test
+	@Test
 	public void testGetPriceHistory() throws Exception {
 
-	    MvcResult result = mockMvc.perform(MockMvcRequestBuilders.get("/price-history/" + SYMBOL)
+	    MvcResult result = mockMvc.perform(MockMvcRequestBuilders.get("/mtp/price-history/" + SYMBOL)
 	    		.param("days", Integer.toString(DAYS))
                 .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
@@ -92,4 +65,5 @@ public class PriceHistoryControllerIntegrationTest {
         assertEquals(SYMBOL, ph.getSymbol(), "symbol doesn't match");
         assertEquals(DAYS, ph.getQuoteList().size(), "quoteList.size() incorrect");
 	}
+	*/
 }
